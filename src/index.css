@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-sage: #8ba888;
+    --color-cream: #faf6f0;
+    --color-lavender: #c4b5e0;
+    --color-sky: #a8d5e2;
+  }
+
+  body {
+    font-family: 'Quicksand', 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Quicksand', 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  .glass-dark {
+    background: rgba(30, 30, 50, 0.35);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #6b9e6b 0%, #8ba888 30%, #c4b5e0 70%, #a8d5e2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@keyframes float-up {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes flutter {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(30px, -20px) rotate(10deg); }
+  50% { transform: translate(60px, 10px) rotate(-5deg); }
+  75% { transform: translate(30px, 30px) rotate(8deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes drift {
+  0% { transform: translateX(-10%); }
+  100% { transform: translateX(110%); }
+}
+
+@keyframes ripple {
+  0% { transform: scale(0); opacity: 0.6; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+@keyframes slide-in {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(196, 181, 224, 0.4); }
+  50% { box-shadow: 0 0 40px rgba(196, 181, 224, 0.7); }
+}
+
+@keyframes firefly {
+  0%, 100% { opacity: 0; transform: translate(0, 0) scale(0.5); }
+  50% { opacity: 1; transform: translate(15px, -15px) scale(1); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-float-up { animation: float-up 8s ease-in infinite; }
+.animate-sway { animation: sway 4s ease-in-out infinite; transform-origin: bottom center; }
+.animate-flutter { animation: flutter 6s ease-in-out infinite; }
+.animate-drift { animation: drift 30s linear infinite; }
+.animate-ripple { animation: ripple 2s ease-out infinite; }
+.animate-slide-in { animation: slide-in 0.3s ease-out; }
+.animate-fade-in-up { animation: fade-in-up 0.5s ease-out; }
+.animate-glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
+.animate-firefly { animation: firefly 4s ease-in-out infinite; }
+.animate-spin-slow { animation: spin-slow 20s linear infinite; }
